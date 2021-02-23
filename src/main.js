@@ -5,7 +5,14 @@ import store from './store'
 import '@/assets/scss/index.scss'
 import FastClick from 'fastclick'
 
-FastClick.attach(document.body) // 应用fastClick
+if ('addEventListener' in document && 'ontouchstart' in window) {
+  FastClick.prototype.focus = function (targetElement) {
+    targetElement.focus()
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    FastClick.attach(document.body)
+  }, false)
+}
 
 Vue.config.productionTip = false
 
