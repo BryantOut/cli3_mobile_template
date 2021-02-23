@@ -1,23 +1,50 @@
 <template>
   <div class="home">
-    <van-button type="primary">主要按钮</van-button>
+    <div class="logoBox">
+      <van-image
+        class="logo"
+        round
+        :src="require('@/assets/img/logo.png')"
+      />
+      <span v-text="projectName"></span>
+    </div>
   </div>
 </template>
 
 <script>
-import { Button } from 'vant'
+import { mapGetters } from 'vuex'
+import { Image as VanImage } from 'vant'
 export default {
   name: 'Home',
   components: {
-    'van-button': Button
+    VanImage
+  },
+  computed: {
+    ...mapGetters([
+      'projectName'
+    ])
   }
 }
 </script>
 
 <style lang="scss">
-  .box {
-    width: 100px;
-    height: 100px;
-    background-color: pink;
-  }
+  .home {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    .logoBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 60px;
+      .logo {
+        width: 60px;
+      }
+      span {
+        color: #7f8c8d;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }    
+  }  
 </style>
