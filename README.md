@@ -54,3 +54,6 @@ if ('addEventListener' in document && 'ontouchstart' in window) {
 }
 ```
 
+## cli3配置开发环境和生产环境
+
+[相关文档](https://www.cnblogs.com/gankehuang/p/11338647.html)

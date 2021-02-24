@@ -16,6 +16,13 @@ if ('addEventListener' in document && 'ontouchstart' in window) {
 
 Vue.config.productionTip = false
 
+import {Toast, Dialog, Lazyload, Image as VanImage} from 'vant'
+
+Vue.use(Toast)
+Vue.use(Dialog)
+Vue.use(Lazyload)
+Vue.use(VanImage)
+
 new Vue({
   router,
   store,

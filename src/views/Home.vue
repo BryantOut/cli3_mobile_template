@@ -4,6 +4,7 @@
       <van-image
         class="logo"
         round
+        lazy-load
         :src="require('@/assets/img/logo.png')"
       />
       <span v-text="projectName"></span>
@@ -13,12 +14,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Image as VanImage } from 'vant'
 export default {
   name: 'Home',
-  components: {
-    VanImage
-  },
   computed: {
     ...mapGetters([
       'projectName'
