@@ -18,6 +18,13 @@ Vue.config.productionTip = false
 
 import {Toast, Dialog, Lazyload, Image as VanImage} from 'vant'
 
+import * as filters from './filters'
+
+// register global utility filters.
+Object.keys(filters).forEach((key) => {
+  Vue.filter(key, filters[key])
+})
+
 Vue.use(Toast)
 Vue.use(Dialog)
 Vue.use(Lazyload)

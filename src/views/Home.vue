@@ -8,6 +8,7 @@
         :src="require('@/assets/img/logo.png')"
       />
       <span v-text="projectName"></span>
+      <span>{{ tempPhoneNumber | formatPhone}}</span>
     </div>
   </div>
 </template>
@@ -20,6 +21,11 @@ export default {
     ...mapGetters([
       'projectName'
     ])
+  },
+  data () {
+    return {
+      tempPhoneNumber: '13533223834'
+    }
   }
 }
 </script>
