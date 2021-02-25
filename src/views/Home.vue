@@ -9,6 +9,7 @@
       />
       <span v-text="projectName"></span>
       <span>{{ tempPhoneNumber | formatPhone}}</span>
+      <i class="iconalipay iconfont"></i>
     </div>
   </div>
 </template>
@@ -47,6 +48,10 @@ export default {
         color: #7f8c8d;
         font-size: 14px;
         margin-top: 10px;
+      }
+      .iconalipay {
+        font-size: 60px;
+        color: #1477fe;
       }
     }    
   }  
