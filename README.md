@@ -57,3 +57,24 @@ if ('addEventListener' in document && 'ontouchstart' in window) {
 ## cli3配置开发环境和生产环境
 
 [相关文档](https://www.cnblogs.com/gankehuang/p/11338647.html)
+
+## vue-cli3打包去掉console.log
+
+- 安装相关依赖
+
+```js
+npm install terser-webpack-plugin --save-dev
+```
+
+- 配置 (vue.config.js)
+
+```js
+module.export = {
+  configureWebpack: (config)=>{
+    if(process.env.NODE_ENV === 'production'){
+      config.optimization.minimizer[0].options.terserOptions.compress.drop_console = true
+    }
+  }
+}
+```
+
